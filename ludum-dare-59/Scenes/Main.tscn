@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bybmjl72tkbsn"]
+
+[ext_resource type="Script" uid="uid://ddrv5xlfjimqw" path="res://Scripts/grid.gd" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://mofld3r2m5u0" path="res://Scenes/Obsical.tscn" id="2_kln2b"]
+[ext_resource type="Texture2D" uid="uid://dadxlfxoe7yco" path="res://Sprites/test_obsticals.png" id="3_rgh2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbw6q"]
+atlas = ExtResource("3_rgh2o")
+region = Rect2(0, 0, 64, 64)
+
+[node name="Main" type="Node2D" unique_id=555046928]
+
+[node name="Grid" type="Node2D" parent="." unique_id=1298334843 node_paths=PackedStringArray("obsticals", "obstical_coords")]
+script = ExtResource("1_r150o")
+obsticals = NodePath("Obsticals")
+obstical_coords = {
+NodePath("Obsticals/Obsical"): Vector2(4, 4)
+}
+
+[node name="Obsticals" type="Node2D" parent="Grid" unique_id=1049567941]
+
+[node name="Obsical" parent="Grid/Obsticals" unique_id=1868037122 instance=ExtResource("2_kln2b")]
+position = Vector2(247.00002, 244.00002)
+scale = Vector2(0.890625, 0.890625)
+sprite_texture = SubResource("AtlasTexture_pbw6q")
