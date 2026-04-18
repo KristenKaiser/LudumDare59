@@ -72,22 +72,6 @@ func get_centered_position(obj_coords: Vector2, x_size : int , y_size : int )-> 
 		y_position += floor(cell_size/2.0)
 	return Vector2(x_position  , y_position)
 
-
-#func get_centered_position(obj_position : Vector2, x_size : int , y_size : int )-> Vector2i:
-	## get grid coordnates
-	#var x_coord : int = (floor((obj_position.x ) / cell_size)) - 1
-	#var y_coord : int = (floor((obj_position.y ) / cell_size)) - 1
-	#
-	## get top right position of cell
-	#var x_position : int = floor(x_coord * cell_size)
-	#var y_position : int = floor(y_coord * cell_size)
-	#
-	#if x_size % 2 == 0:
-		#x_position += floor(cell_size/2.0)
-	#if y_size % 2 == 0:
-		#y_position += floor(cell_size/2.0)
-	#return Vector2(x_position  , y_position)
-
 func get_position_coords(obj_position : Vector2)->Vector2i:
 	var x_coord : int = (floor((obj_position.x + (cell_size*.1) ) / cell_size)) 
 	var y_coord : int = (floor((obj_position.y + (cell_size*.1) ) / cell_size)) 

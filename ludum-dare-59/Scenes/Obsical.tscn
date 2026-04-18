@@ -3,46 +3,67 @@
 [ext_resource type="Script" uid="uid://cr7q2hnsmn62d" path="res://Scripts/obsical.gd" id="1_7hr3m"]
 [ext_resource type="Script" uid="uid://q8kvfymctou5" path="res://Scenes/rotate_button.gd" id="2_5nwck"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_7hr3m"]
-b = Vector2(0, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5nwck"]
 
-[node name="Obsical" type="Node2D" unique_id=1868037122 node_paths=PackedStringArray("sprite2d", "rotate_buttons")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_niahy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxqad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2kqy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38523"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1v2c1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50veg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lf8j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cchmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7m230"]
+
+[node name="Obsical" type="Node2D" unique_id=1868037122 node_paths=PackedStringArray("rotate_buttons")]
 script = ExtResource("1_7hr3m")
-sprite2d = NodePath("Sprite2D")
 rotate_buttons = NodePath("buttons")
 
 [node name="buttons" type="HBoxContainer" parent="." unique_id=49938080]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -7.5
-offset_top = -3.5
-offset_right = 8.5
-offset_bottom = 4.5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 2
-size_flags_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="left" type="Button" parent="buttons" unique_id=1334795147]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5nwck")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_niahy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xxqad")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r2kqy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38523")
 script = ExtResource("2_5nwck")
 
 [node name="right" type="Button" parent="buttons" unique_id=1127661685]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1v2c1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_50veg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8lf8j")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cchmx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7m230")
 script = ExtResource("2_5nwck")
 rotate_direction = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=147962171]
-
-[node name="Area2D" type="Area2D" parent="." unique_id=2094575218]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2130469391]
-shape = SubResource("SegmentShape2D_7hr3m")
 
 [connection signal="button_down" from="buttons/left" to="." method="_on_left_button_down"]
 [connection signal="button_down" from="buttons/right" to="." method="_on_right_button_down"]

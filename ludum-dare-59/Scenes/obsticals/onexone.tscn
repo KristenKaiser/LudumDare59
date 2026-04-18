@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://8xsbftucg3jr"]
+
+[ext_resource type="Texture2D" uid="uid://dadxlfxoe7yco" path="res://Sprites/test_obsticals.png" id="1_0beni"]
+[ext_resource type="Script" uid="uid://crvao85nbvef4" path="res://Scenes/obsticals/obstical_sprite.gd" id="2_mhgqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhgqs"]
+atlas = ExtResource("1_0beni")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mhgqs"]
+a = Vector2(0, -30)
+b = Vector2(0, 30)
+
+[node name="onexone" type="Sprite2D" unique_id=1255708141]
+texture = SubResource("AtlasTexture_mhgqs")
+script = ExtResource("2_mhgqs")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=147589325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=363205064]
+position = Vector2(0.5, 0)
+shape = SubResource("SegmentShape2D_mhgqs")
